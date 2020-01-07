@@ -4,7 +4,7 @@ import "package:world_time/pages/home.dart";
 import 'package:world_time/pages/loading.dart';
 
 void main() => runApp(MaterialApp(
-  initialRoute: "/home", //override initial route - testing
+  initialRoute: "/", //override initial route - testing
   routes: { // app navigation defined
     "/": (context)=> Loading(),
     "/home": (context)=> Home(),
