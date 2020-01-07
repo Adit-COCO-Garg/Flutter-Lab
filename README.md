@@ -14,6 +14,6 @@ This project was inspired by [The Net Ninja](https://www.youtube.com/channel/UCW
 I added some of my own logic and assets wherever I could to make it my own to some extent, but full credit goes to [The Net Ninja](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg "The Net Ninja") for the tutorial series. I followed along, trying to learn as much as I could.  
   
 Checkout my take on the [World time flutter app](/world_time)  
-
+`>> gif coming soon`
 ### Simple user UI using flutter
 [Simple user UI using flutter](/ninja_id)
