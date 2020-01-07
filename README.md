@@ -17,3 +17,4 @@ Checkout my take on the [World time flutter app](/world_time)
 `>> gif coming soon`
 ### Simple user UI using flutter
 [Simple user UI using flutter](/ninja_id)
+`>> gif coming soon`
