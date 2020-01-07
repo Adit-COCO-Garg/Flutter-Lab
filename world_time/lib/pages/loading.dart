@@ -1,6 +1,7 @@
+import 'package:flare_flutter/flare_actor.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import "package:http/http.dart";
-import "dart:convert";
+import "package:world_time/services/world_time.dart";
 
 class Loading extends StatefulWidget {
   @override
@@ -9,24 +10,31 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-  void getData() async{
-    Response response = await get("https://jsonplaceholder.typicode.com/todos/1");
-    Map data = jsonDecode(response.body);
-    print(data);
-
+  void setupWorldTime() async{
+    WorldTime inst = WorldTime(location: "New_York", flag: "germany", url: "some.png");
+    await inst.getTime();
+    Navigator.pushReplacementNamed(context, "/home", arguments: {
+      "location": inst.location,
+      "flag": inst.flag,
+      "time": inst.time,
+    });
   }
 
   @override
   void initState() {
     super.initState();
-    getData();
+    setupWorldTime();
   }
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("Loading Screen"),
+      body: Center(
+        child: FlareActor("assets/animations/earth.flr",
+
+        ),
+      ),
     );
   }
 }
