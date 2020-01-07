@@ -9,14 +9,15 @@ class WorldTime {
   String flag; // url flag icon UI
   String url = "http://worldtimeapi.org/api/timezone/"; // query url for api endpoint - worldTime API http://worldtimeapi.org/
   String query; // queries to be added
+  bool isDaytime;
 
-  WorldTime({this.location, this.flag, this.url});
+  WorldTime({this.location, this.flag, this.query});
 
   /// Calls api and requests location specific times
   Future<void> getTime() async{
     try{
       // request and store in [response]
-      Response response = await get("http://worldtimeapi.org/api/timezone/America/New_York");
+      Response response = await get(url+query);
       // convert response string to Dart Map
       Map data = jsonDecode(response.body);
       // Parse MAP data into fields
@@ -33,6 +34,7 @@ class WorldTime {
 
       // set time prop
       time = DateFormat.jm().format(now);
+      isDaytime = now.hour > 6 && now.hour < 20;
     }
     catch(e){
       print("error caught $e");
